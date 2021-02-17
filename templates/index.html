@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Emojify</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="heading">
+            <h1 style="font-size:35px">&#128526; Emojify Sentences &#128526;</h1>
+        </div>
+
+        <div class="break"></div>
+
+    
+        <div class="work-area">
+
+            <div class="input_section">
+                <!-- UPLOAD SECTION -->
+                <h1>Enter your sentences</h1>
+                <form id="upload-form" action="{{ url_for('index') }}" method="POST">
+                    <div class="textstuff">
+                        <textarea name="sentences" id="field" placeholder="Type Here" maxlength="3000" rows="10" cols="40"></textarea>
+                    </div>
+                    <br>
+                    <div class="emojify-button">
+                        <input type="submit" class="btn btn-success emojify-button" value="Emojify" id="submit_input">
+                    </div>
+                </form>
+
+            </div>
+    
+            <div class="output_section">
+                <!-- OUTPUT SECTION -->
+                <h1>Emojified Sentences</h1>
+                <div class="output-text">
+                    <div class="output-text-area">
+                        <p>{{emojified}}</p>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    
+</body>
+</html>
